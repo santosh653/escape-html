@@ -1,3 +1,18 @@
+# ----------------------------------------------------------------------------
+#
+# Package             : escape-html-library
+# Source Repo         : https://github.com/component/escape-html
+# Travis Job Link     : https://travis-ci.com/github/santosh653/escape-html
+# Created travis.yml  : No
+# Maintainer          : Santosh Kulkarni <santoshkulkarni70@gmail.com>
+#
+# Script License      : Apache License, Version 2 or later
+#
+# ----------------------------------------------------------------------------
+
+arch:
+  - amd64
+  - ppc64le
 language: node_js
 node_js:
   - "0.6"
@@ -15,6 +30,24 @@ node_js:
   - "9.11"
   - "10.15"
   - "11.6"
+#Excluding unsupported node_js versions on power
+jobs:
+ exclude:
+  - node_js: "0.6"
+    arch: ppc64le
+  - node_js: "0.8"
+    arch: ppc64le
+  - node_js: "0.10"
+    arch: ppc64le
+  - node_js: "0.12"
+    arch: ppc64le
+  - node_js: "1.8"
+    arch: ppc64le
+  - node_js: "2.5"
+    arch: ppc64le
+  - node_js: "3.3"
+    arch: ppc64le
+
 sudo: false
 dist: precise
 cache:
